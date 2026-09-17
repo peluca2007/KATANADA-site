@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sokaaki</title>
+    <title>KATANADA</title>
     <link rel="apple-touch-icon" sizes="180x180" href="public/apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,59 +21,94 @@
             </ul>
         </nav>
     </header>
-    <section>
 
+    <section class="container">
         <div class="list">
-            <div class="item">
+            <!-- ITEM 1: KATANA (Ativo por padrão) -->
+            <div class="item active" id="arma-katana">
                 <div class="imagem_and_title">
                     <div class="imagem_armas">
-                        <img src="./public/katana.png" alt="Arma">
+                        <img src="./public/katana.png" alt="Katana">
                     </div>
-
                     <div class="title">
                         <h2>Katana</h2>
                     </div>
                 </div>
-
                 <div class="content">
-                    <p class="Arma_info">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur aliquam ipsam
-                        ea iure quidem inventore aperiam libero quod omnis nihil, deleniti at? Saepe similique ipsa
-                        aspernatur maxime corrupti sint numquam.</p>
+                    <p class="Arma_info">A espada clássica dos samurais. Famosa por seu corte preciso e lâmina curva, ideal para combates ágeis e cortes contínuos.</p>
                 </div>
-
-
                 <button class="btn_info">Mais informações</button>
-            </div> <!-- Aqui fecha o .item -->
+            </div> 
+
+            <!-- ITEM 2: Luvas de boxe -->
+            <div class="item" id="arma-luvas">
+                <div class="imagem_and_title">
+                    <div class="imagem_armas">
+                        <img src="./public/luvadebox.png" alt="Luvas de boxe">
+                    </div>
+                    <div class="title">
+                        <h2>Luvas de boxe</h2>
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="Arma_info">Luvas de boxe são essenciais para proteger as mãos durante os treinos e lutas. Elas oferecem suporte e proteção contra impactos e cortes.</p>
+                </div>
+                <button class="btn_info">Mais informações</button>
+            </div>
+
+            <!-- ITEM 3: Alabarda -->
+            <div class="item" id="arma-alabarda">
+                <div class="imagem_and_title">
+                    <div class="imagem_armas">
+                        <img src="./public/alabarda.png" alt="Alabarda">
+                    </div>
+                    <div class="title">
+                        <h2>Alabarda</h2>
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="Arma_info">Uma arma de dois extremos, com uma lâmina afiada em uma extremidade e um gancho ou ponta em outra. É uma arma versátil e poderosa, adequada para combates a curta e média distância.</p>
+                </div>
+                <button class="btn_info">Mais informações</button>
+            </div>
+
+            <!-- ITEM 4: Nunchaku -->
+            <div class="item" id="arma-nunchaku">
+                <div class="imagem_and_title">
+                    <div class="imagem_armas">
+                        <img src="./public/nunchaku.png" alt="Nunchaku">
+                    </div>
+                    <div class="title">
+                        <h2>Nunchaku</h2>
+                    </div>
+                </div>
+                <div class="content">
+                    <p class="Arma_info">Uma arma tradicional japonesa composta por dois bastões conectados por uma corda. É usada para defesa e ataque, sendo conhecida por sua versatilidade e eficácia em combate.</p>
+                </div>
+                <button class="btn_info">Mais informações</button>
+            </div>
         </div>
 
+        <!-- CONTROLES -->
         <div class="arrows">
-            <button class="arrow left">
-                <p>&lt;</p>
-            </button>
-            <button class="arrow right">
-                <p>&gt;</p>
-            </button>
+            <button id="prev" class="arrow left"><p>&lt;</p></button>
+            <button id="next" class="arrow right"><p>&gt;</p></button>
         </div>
+        
         <div class="indication">
             <div class="number">01</div>
             <ul>
                 <li class="active"></li>
                 <li></li>
                 <li></li>
+                <li></li> 
             </ul>
         </div>
-
-
-        </div>
-
     </section>
-    <footer>
-
-    </footer>
-
-
-
-
+    
 </body>
+
+
+<script src="script.js"></script>
 
 </html>
