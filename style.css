@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Archivo Black', sans-serif;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+header {
+    background-color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #000;
+    background: linear-gradient(to top, #ffffff, #f0f0f0, #e0e0e0);
+    border-bottom: 3.67px solid #acabab;
+    position: relative;
+    z-index: 10;
+}
+ul{
+    position: relative;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-right: 10px;
+    
+}
+
+section{
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    background: linear-gradient(to bottom,white, black)
+}
+
+
+img.logo{
+    width: 60px;
+    height: auto;
+}
+h1{
+    font-size: 2.5rem;
+    color: black;
+    margin-bottom: 20px;
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-left: 21%;
+}
+img{
+    max-width: 50%;
+    height: auto;
+}
+
+
+div.imagem_armas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(330deg);
+    margin-top: 14%;
+}
+
+.item {
+    position: relative; 
+    z-index: 5;
+}
+
+div.title {
+    position: absolute;
+    top: 55%;           
+    left: 31%;         
+    z-index: -1;   
+    font-size: 5rem;
+    -webkit-text-stroke-color: black;
+    -webkit-text-stroke-width: 1px;
+    text-transform: uppercase;
+}
+
+div.content {
+    position: relative;
+    margin-left: 50%;   
+    margin-top: -10.2%;
+    
+    font-size: 0.875rem;
+    margin-right: 25%;
+    z-index: 4;
+    margin-top: -2.2%;
+}
+
+button.btn_info {
+    position: relative;
+    bottom: 0;
+    left: 20%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 15px;
+    margin-right: 2%;
+}
+
+div.imagem_and_title {
+    position: relative; 
+    display: flex;     
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-50px);
+}
+
+
+
+div.arrows {
+    position: absolute;
+    top: 50%;
+    left: 10%; 
+    width: 80%;
+    margin-top: -25px; 
+    justify-content: space-between;
+    display: flex;
+    pointer-events: none; 
+   
+}
+
+
+div.arrows button {
+    background-color: white;
+    border: none;
+    border-radius: 30%;
+    width: 50px;
+    height: 50px;
+    position: relative; 
+    z-index: 10; 
+    pointer-events: auto; 
+    font-size: 2rem;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div.arrows button p {
+    position: relative;
+    bottom: 3px;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    color: inherit; 
+    pointer-events: none; 
+}
+
+
+div.arrows button:hover {
+    background-color: #000; 
+    color: #fff; 
+}
+
+/* 5. A linha conectora */
+div.arrows::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50px;
+    right: 50px;
+    height: 2px;
+    background-color: white; 
+    transform: translateY(-50%); 
+    z-index: 1; 
+}
