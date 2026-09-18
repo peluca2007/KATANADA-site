@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
+
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Archivo Black', sans-serif;
+    text-decoration: none;
 }
 
 body {
@@ -33,6 +37,29 @@ header nav ul {
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
     margin-right: 10px;
+    text-align: center;
+}
+
+
+header nav ul a {
+    position: relative;
+    text-decoration: none;
+    font-size: 1.20rem;
+    color: #000;
+}
+
+header nav ul a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    border-bottom: 2px solid black;
+    transition: width 0.5s ease-in-out;
+}
+
+header nav ul a:hover::after {
+    width: 100%;
 }
 
 section {
@@ -54,8 +81,10 @@ h1 {
     font-family: 'Archivo Black', sans-serif;
     font-weight: 400;
     margin-top: 20px;
-    margin-left: 21%;
+    margin-left: 22%;
+    position: relative;
 }
+
 
 img {
     max-width: 50%;
@@ -66,8 +95,21 @@ div.imagem_armas {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 14%;
+    width: max-content;  
+    height: max-content; 
+    margin: 0;           
 }
+
+div.imagem_armas img {
+    display: block;
+    margin: 0;
+    padding: 0;
+    max-width: none;  
+    width: auto;
+    height: 40vh;     
+}
+
+
 
 .item {
     position: relative;
@@ -76,7 +118,7 @@ div.imagem_armas {
 
 div.title {
     position: absolute;
-    top: 60%;
+    top: 58%;
     left: 30%;
     z-index: -1;
     font-size: 4.5rem;
@@ -98,7 +140,7 @@ div.content {
 button.btn_info {
     position: relative;
     bottom: 0;
-    left:5.2%;
+    left: 5.2%;
     transform: translateX(-50%);
     padding: 10px 20px;
     background-color: #000;
@@ -116,6 +158,17 @@ div.imagem_and_title {
     align-items: center;
     justify-content: center;
     transform: translateY(-50px);
+    top: 5%;
+    width: max-content; 
+    height: max-content;
+    margin: 15% auto 0 auto;
+    cursor: grab;
+    border: 1px solid red; 
+}
+
+div.imagem_and_title img {
+    max-height: 25vh; /* Limita a altura máxima baseada na tela */
+    width: auto;
 }
 
 div.arrows {
@@ -215,28 +268,44 @@ div.arrows::before {
 section {
     .list {
         position: relative;
-        height: 60vh; 
-        width: 100%;
-        overflow: hidden; 
+        height: 60vh;
+            
+        overflow: hidden;
 
         .item {
             position: absolute;
             inset: 0;
-            opacity: 0; 
-            transform: translateX(100vw); 
+            opacity: 0;
+            transform: translateX(100vw);
             transition: all 0.5s ease-in-out;
             z-index: 1;
-            
+
             .imagem_and_title {
                 .imagem_armas {
                     transform: scale(0.5);
                     transition: transform 2.2s ease-out;
                 }
+
                 .title {
                     transform: translateX(150vw);
                     transition: transform 0.8s ease-out;
                 }
+
+                transition: transform 1.5s ease;
             }
+
+            .imagem_and_title::after {
+                transition: transform 1.5s ease;
+            }
+
+            .imagem_and_title:hover {
+                transform: translateY(-60px);
+            }
+
+            .imagem_and_title:hover::after {
+                transform: translateY(60px);
+            }
+
             .content {
                 transform: translateX(200px);
                 transition: transform 0.6s ease-out;
@@ -244,19 +313,21 @@ section {
 
             &.active {
                 opacity: 1;
-                transform: translateX(0); 
-                z-index: 5; 
+                transform: translateX(0);
+                z-index: 5;
 
                 .imagem_and_title {
                     .imagem_armas {
-                        transform: scale(1); 
-                        transition-delay: 0.2s; 
+                        transform: scale(1);
+                        transition-delay: 0.2s;
                     }
+
                     .title {
                         transform: translateX(0);
                         transition-delay: 0.4s;
                     }
                 }
+
                 .content {
                     transform: translateX(0);
                     transition-delay: 0.6s;
@@ -273,12 +344,22 @@ section {
 /* --- KATANA --- */
 #arma-katana .imagem_and_title .imagem_armas {
     position: relative;
-    transform: rotate(3000deg) scale(0.5); 
+    transform: rotate(3000deg) scale(0.5);
     left: 5%;
-    
+
 }
 
+#arma-katana .imagem_armas img {
+    max-height: 15vh;
+    margin-top:-10px;
+   
+}
 
+#arma-katana .title {
+    top:-35px;
+    left:15%;
+    
+}
 
 #arma-katana.active .imagem_and_title .imagem_armas {
     transform: rotate(0deg) scale(1);
@@ -287,28 +368,57 @@ section {
 
 /* --- LUVAS DE BOXE --- */
 #arma-luvas .title {
-    top: 60%; 
+    top: 50%;
     left: 28%;
+    border: 1px solid red;
 }
-#arma-luvas .title h2 {
-    font-family: 'DM Sans', sans-serif; 
+
+#arma-luvas .imagem_armas img {
+    max-height: 20vh;
+    margin-top:-5%;
+     border: #000 solid 1px;
 }
+
+#luvadebox1{
+    display: flex;
+    transform: scaleX(-1) rotate(180deg);
+}
+
+#luvadebox2{
+    rotate: 180deg;
+}
+
 #arma-luvas .imagem_and_title .imagem_armas {
-    transform: translateY(200px) scale(0.5); 
+    transform: translateY(200px) scale(0.5);
 }
+
 #arma-luvas.active .imagem_and_title .imagem_armas {
-    transform: translateY(0) scale(1); 
+    transform: translateY(0) scale(1);
     transition: transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 
 /* --- ALABARDA --- */
-#arma-alabarda .title h2 {
-    letter-spacing: 5px; 
+#arma-alabarda .title  {
+    display: flex;
+    z-index: -1;
+    top: -10%;
+    left: -25%;
 }
+
 #arma-alabarda .imagem_and_title .imagem_armas {
-    transform: translateY(-300px) rotate(45deg) scale(0.5);
+    transform: translateY(400px) rotate(0deg) scale(0.5);
 }
+#arma-alabarda .imagem_armas img {
+    max-height: none; 
+    height: 80vh; 
+    width: auto;
+    margin-top: -55%;
+    border: #000 solid 1px;
+    transform: rotate(58deg);
+    z-index: 2;
+}
+
 #arma-alabarda.active .imagem_and_title .imagem_armas {
     transform: translateY(0) rotate(0deg) scale(1);
 }
@@ -316,8 +426,42 @@ section {
 
 /* --- NUNCHAKU --- */
 #arma-nunchaku .imagem_and_title .imagem_armas {
-    transform: translateX(300px) rotate(-90deg) scale(0.5);
+    transform: translateX(300px) rotate(-6767deg) scale(1);
 }
+
+#arma-nunchaku .title {
+    display: flex;
+    top: -16%;
+    left: -40%;
+    border: 1px solid red;
+}
+
 #arma-nunchaku.active .imagem_and_title .imagem_armas {
-    transform: translateX(0) rotate(0deg) scale(1);
+    transform: translateX(0) rotate(67670deg) scale(1);
+}
+
+#arma-nunchaku .imagem_armas img {
+    max-height: none; 
+    height: 40vh; 
+    width: auto;
+    margin-top: -28%;
+    border: #000 solid 1px;
+    z-index: 2;
+
+}
+
+
+
+/* Carrosel */
+
+.list{
+    width: 90%;
+    overflow: hidden;
+    margin: 0 auto;
+    border: 1px solid #000;
+}
+
+.imagem_and_title{
+    cursor: grab;
+    
 }
